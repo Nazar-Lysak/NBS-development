@@ -1,0 +1,16 @@
+# Global stylings. These CSS files will be loaded on every pages.
+global-styling:
+  version: 1.0
+  css:
+    base:
+      build/css/styles.css: {}
+
+# Global Javascripts. These will be loaded on every pages.
+global-scripts:
+  version: 1.0
+  js:
+    build/js/scripts.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/once

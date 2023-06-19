@@ -1,0 +1,14 @@
+{
+    "name": "agriculture",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "dependencies": {
+      "gulp": "^4.0.2",
+      "gulp-babel": "^8.0.0",
+      "gulp-concat": "^2.6.1",
+      "gulp-imagemin": "^8.0.0",
+      "gulp-sass": "^5.1.0",
+      "sass": "^1.52.1"
+    }
+  }
