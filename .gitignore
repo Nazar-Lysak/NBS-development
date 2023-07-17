@@ -19,6 +19,7 @@
 
 # Ignore SimpleTest multi-site environment.
 /web/sites/simpletest
+.ddev/
 
 
 # Ignore custom modules managed by Composer.
