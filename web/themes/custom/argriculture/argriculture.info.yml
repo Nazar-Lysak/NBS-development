@@ -1,13 +1,13 @@
 name: Agriculture theme
 type: theme
-base theme: olivero
+base theme: claro
 description: 'Agriculture Theme'
 core_version_requirement: ^10
 libraries:  
   - argriculture/global-styling
   - argriculture/global-scripts
 libraries-override:
-  olivero/base: false
+  claro/base: false
 regions:
   header: Header
   content: Content
