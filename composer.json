@@ -28,7 +28,8 @@
         "drupal/twig_tweak": "^3.2",
         "drupal/default_widget": "^2.0",
         "drupal/jquery_ui_tabs": "^2.0",
-        "drupal/field_group": "^3.4"
+        "drupal/field_group": "^3.4",
+        "drupal/webform": "^6.2@beta"
     },
     "require-dev": {
         "drupal/core-dev": "^10"

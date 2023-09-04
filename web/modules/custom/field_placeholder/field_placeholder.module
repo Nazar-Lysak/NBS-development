@@ -1,0 +1,100 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function field_placeholder_form_node_product_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+  $form['field_fill_related_products_automatically'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Fill the field automatically'),
+    '#default_value' => FALSE,
+    '#weight' => 8,
+    '#element_validate' => ['field_placeholder_related_products_validate'],
+  ];
+}
+
+/**
+ * Custom element validation callback for the "Fill the field automatically" checkbox.
+ */
+function field_placeholder_related_products_validate(array &$element, FormStateInterface $form_state, &$complete_form) {
+  $fill_automatically = $form_state->getValue('field_fill_related_products_automatically');
+  $related_products = $form_state->getValue('field_related_products');
+
+  if (!$fill_automatically) {
+    // Перевіряємо, чи має користувач хоча б один пов'язаний продукт.
+    if (empty(array_filter($related_products, function ($item) {
+      return !empty($item['target_id']);
+    }))) {
+      $form_state->setErrorByName('field_related_products', t('Please enter at least one related product!'));
+    }
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_presave() for node entities.
+ */
+function field_placeholder_node_presave(NodeInterface $node) {
+  $fill_automatically = \Drupal::request()->request->get('field_fill_related_products_automatically');
+
+  // Отримання значень для заповнення в поле "Related products".
+  $related_products = field_placeholder_get_related_products($node);
+
+  if (!$fill_automatically) {
+    // Перевіряємо, чи має користувач хоча б один пов'язаний продукт.
+    if (empty($related_products)) {
+      throw new \Drupal\Core\Entity\EntityStorageException(t('Please enter at least one related product!'));
+    }
+    return;
+  }
+
+  // Перевірка, чи поточний тип вмісту є "Product".
+  if ($node->getType() === 'product') {
+    // Заповнення поля "Related products" у форматі target_id.
+    $related_products_ids = [];
+    foreach ($related_products as $product) {
+      $related_products_ids[] = ['target_id' => $product->id()];
+    }
+
+    // Збереження значень у полі "Related products".
+    $node->set('field_related_products', $related_products_ids);
+  }
+}
+
+/**
+ * Функція для отримання списку пов'язаних продуктів з таким самим терміном таксономії.
+ */
+function field_placeholder_get_related_products(NodeInterface $node) {
+  $related_products = [];
+  // Отримуємо значення таксономії "Product categories" поточного продукту.
+  $categories = $node->get('field_product_categories')->referencedEntities();
+  if (!empty($categories)) {
+    // Отримуємо термін ID з першого значення таксономії.
+    $term_id = $categories[0]->id();
+
+    // Отримуємо сервіс EntityTypeManagerInterface для доступу до сутностей.
+    $entity_type_manager = \Drupal::entityTypeManager();
+
+    // Використовуємо сервіс для отримання сутності Product.
+    $product_storage = $entity_type_manager->getStorage('node');
+
+    // Підготовлюємо запит до бази даних з належними перевірками доступу.
+    $query = $product_storage->getQuery()
+      ->condition('type', 'product')
+      ->condition('status', 1) // Враховуємо тільки активні продукти.
+      ->condition('field_product_categories', $term_id)
+      ->accessCheck(TRUE); // Встановлюємо перевірку доступу.
+
+    // Виконуємо запит та отримуємо результат.
+    $nids = $query->execute();
+
+    // Завантажуємо всі пов'язані продукти за допомогою отриманих NID.
+    $related_products = $product_storage->loadMultiple($nids);
+  }
+
+  return $related_products;
+}
