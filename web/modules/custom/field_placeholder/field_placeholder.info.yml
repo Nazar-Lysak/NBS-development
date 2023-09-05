@@ -1,0 +1,7 @@
+name: 'Field Placeholder'
+type: module
+description: 'Automatically populates the "Related products" field for the "Product" content type.'
+package: Custom
+core_version_requirement: ^8 || ^9 || ^10
+version: 1.0
+field_ui_base_route: entity.node.product.edit_form
