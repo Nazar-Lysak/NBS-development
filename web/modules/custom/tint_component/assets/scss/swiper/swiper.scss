@@ -1,0 +1,105 @@
+.paragraph--type--tint-component {
+    
+    .tint_title {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 35px; 
+    }
+
+    .tint-api_out {
+        .swiper {
+            min-height: 444px;
+            padding: 40px 0;
+
+            .swiper-slide {      
+                border-radius: 8px;  
+                overflow: hidden;   
+                position: relative;   
+                cursor: grab;    
+                
+                .slide-image,
+                .slide-image_container {
+                    height: 255px !important;
+                }
+            }   
+            
+            .swiper-navigation {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                height: 50px;
+
+                .swiper-button-next,
+                .swiper-button-prev {
+
+                    &::after {
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        top: 1px; 
+                        font-size: 0;
+                        height: 12px;
+                        width: 18px;
+                        position: relative; 
+                        z-index: 99;
+                    }                    
+                }
+
+                .swiper-button-next {
+                    left: 28px;
+                    &::after {
+                        background-image: url('../../images/icon-right.svg');    
+                    } 
+                }
+
+                .swiper-button-prev {
+                    left: -55px;
+                    &::after {
+                        background-image: url('../../images/icon-left.svg');    
+                    } 
+                }
+            }
+
+            .swiper-pagination {
+                z-index: 1;
+                bottom: 20px;
+
+                .swiper-pagination-bullet {
+                    background: #d2d2d2;
+                    opacity: 1;
+                    transform: scale(1);
+                }
+
+                .swiper-pagination-bullet-active {
+                    background: #000;
+                }
+
+                .swiper-pagination-bullet-active-next-next,
+                .swiper-pagination-bullet-active-prev-prev {
+                    transform: scale(0);
+                }
+            }
+        }        
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .paragraph--type--tint-component {
+        .tint-api_out {
+            .swiper {
+                padding: 0;
+
+                .swiper-slide {      
+                    
+                    .slide-image,
+                    .slide-image_container {
+                        height: 320px !important;
+                    }
+                }
+            }        
+        }
+    }
+}
+

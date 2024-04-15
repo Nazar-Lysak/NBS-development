@@ -1,0 +1,362 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.tint_component.field_cta_for_post
+    - field.field.paragraph.tint_component.field_ltint_c_ink_open_method
+    - field.field.paragraph.tint_component.field_overlay_text_color
+    - field.field.paragraph.tint_component.field_tint_c_api_key
+    - field.field.paragraph.tint_component.field_tint_c_description
+    - field.field.paragraph.tint_component.field_tint_c_grid_initial_posts
+    - field.field.paragraph.tint_component.field_tint_c_initial_tile_posts
+    - field.field.paragraph.tint_component.field_tint_c_load_more_posts
+    - field.field.paragraph.tint_component.field_tint_c_max_posts
+    - field.field.paragraph.tint_component.field_tint_c_overlay_bg
+    - field.field.paragraph.tint_component.field_tint_c_share_button
+    - field.field.paragraph.tint_component.field_tint_c_slider_autoscroll
+    - field.field.paragraph.tint_component.field_tint_c_template
+    - field.field.paragraph.tint_component.field_tint_c_title
+    - field.field.paragraph.tint_component.field_tint_comp_theme_color
+    - field.field.paragraph.tint_component.field_tint_g_dektop_posts_in_row
+    - field.field.paragraph.tint_component.field_tint_g_mobile_posts_in_row
+    - field.field.paragraph.tint_component.field_tint_popup_bg_color
+    - field.field.paragraph.tint_component.field_tint_post_index_search
+    - field.field.paragraph.tint_component.field_tint_t_dektop_posts_in_row
+    - field.field.paragraph.tint_component.field_tint_t_load_more_posts
+    - field.field.paragraph.tint_component.field_tint_t_mobile_posts_in_row
+    - field.field.paragraph.tint_component.field_tint_text_color
+    - paragraphs.paragraphs_type.tint_component
+  module:
+    - color_field
+    - field_group
+    - paragraphs
+    - text
+third_party_settings:
+  field_group:
+    group_tint_comp_tabs:
+      children:
+        - group_tint_comp_general
+        - group_theme_colors
+        - group_slider
+        - group_grid
+        - group_tile
+      label: Tabs
+      region: content
+      parent_name: group_tint_config
+      weight: 3
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        direction: horizontal
+        width_breakpoint: 640
+    group_tint_comp_general:
+      children:
+        - field_tint_c_api_key
+        - field_tint_c_template
+        - field_tint_c_max_posts
+        - field_tint_c_share_button
+        - field_ltint_c_ink_open_method
+      label: General
+      region: content
+      parent_name: group_tint_comp_tabs
+      weight: 20
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_theme_colors:
+      children:
+        - field_tint_comp_theme_color
+        - field_tint_text_color
+        - field_tint_c_overlay_bg
+        - field_overlay_text_color
+        - field_tint_popup_bg_color
+      label: 'Theme colors'
+      region: content
+      parent_name: group_tint_comp_tabs
+      weight: 21
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_slider:
+      children:
+        - field_tint_c_slider_autoscroll
+      label: Slider
+      region: content
+      parent_name: group_tint_comp_tabs
+      weight: 22
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_grid:
+      children:
+        - field_tint_c_grid_initial_posts
+        - field_tint_g_dektop_posts_in_row
+        - field_tint_g_mobile_posts_in_row
+        - field_tint_c_load_more_posts
+      label: Grid
+      region: content
+      parent_name: group_tint_comp_tabs
+      weight: 23
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_tile:
+      children:
+        - field_tint_c_initial_tile_posts
+        - field_tint_t_dektop_posts_in_row
+        - field_tint_t_mobile_posts_in_row
+        - field_tint_t_load_more_posts
+      label: Tile
+      region: content
+      parent_name: group_tint_comp_tabs
+      weight: 25
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_tint_tab_title_description:
+      children:
+        - field_tint_c_title
+        - field_tint_c_description
+      label: Title/Description
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_tint_config:
+      children:
+        - group_tint_comp_tabs
+      label: 'Tint Config'
+      region: content
+      parent_name: ''
+      weight: 1
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_tint_c_cta_group:
+      children:
+        - field_cta_for_post
+      label: 'CTA Group'
+      region: content
+      parent_name: ''
+      weight: 4
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+_core:
+  default_config_hash: TFZZ0KQo6OMbXKiRs9L1wIFcO2GDtDmbo-EpIvWmg6M
+id: paragraph.tint_component.default
+targetEntityType: paragraph
+bundle: tint_component
+mode: default
+content:
+  field_cta_for_post:
+    type: paragraphs
+    weight: 4
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+  field_ltint_c_ink_open_method:
+    type: options_select
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_overlay_text_color:
+    type: color_field_widget_html5
+    weight: 19
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_tint_c_api_key:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_tint_c_description:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_tint_c_grid_initial_posts:
+    type: number
+    weight: 24
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_tint_c_initial_tile_posts:
+    type: number
+    weight: 25
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_tint_c_load_more_posts:
+    type: number
+    weight: 27
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_tint_c_max_posts:
+    type: number
+    weight: 5
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_tint_c_overlay_bg:
+    type: color_field_widget_html5
+    weight: 18
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_tint_c_share_button:
+    type: options_select
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_tint_c_slider_autoscroll:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_tint_c_template:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_tint_c_title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_tint_comp_theme_color:
+    type: color_field_widget_html5
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_tint_g_dektop_posts_in_row:
+    type: options_select
+    weight: 25
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_tint_g_mobile_posts_in_row:
+    type: options_select
+    weight: 26
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_tint_popup_bg_color:
+    type: color_field_widget_html5
+    weight: 20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_tint_post_index_search:
+    type: number
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_tint_t_dektop_posts_in_row:
+    type: options_select
+    weight: 26
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_tint_t_load_more_posts:
+    type: number
+    weight: 28
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_tint_t_mobile_posts_in_row:
+    type: options_select
+    weight: 27
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_tint_text_color:
+    type: color_field_widget_html5
+    weight: 17
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cta_for_post
+    - paragraphs.paragraphs_type.tint_component
+    - paragraphs.paragraphs_type.tint_component_item_cta
+  module:
+    - entity_reference_revisions
+id: paragraph.tint_component.field_cta_for_post
+field_name: field_cta_for_post
+entity_type: paragraph
+bundle: tint_component
+label: 'CTA For Post'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      tint_component_item_cta: tint_component_item_cta
+    negate: 0
+    target_bundles_drag_drop:
+      additional_banner:
+        weight: 5
+        enabled: false
+      main_banner:
+        weight: 6
+        enabled: false
+      tint_component:
+        weight: 7
+        enabled: false
+      tint_component_item_cta:
+        weight: 8
+        enabled: true
+field_type: entity_reference_revisions

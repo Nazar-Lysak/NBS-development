@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_index_of_post
+    - paragraphs.paragraphs_type.tint_component_item_cta
+id: paragraph.tint_component_item_cta.field_index_of_post
+field_name: field_index_of_post
+entity_type: paragraph
+bundle: tint_component_item_cta
+label: 'Index Of Post'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: 1000
+  prefix: ''
+  suffix: ''
+field_type: integer

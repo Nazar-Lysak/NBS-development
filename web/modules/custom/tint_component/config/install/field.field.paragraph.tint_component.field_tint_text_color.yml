@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tint_text_color
+    - paragraphs.paragraphs_type.tint_component
+  module:
+    - color_field
+_core:
+  default_config_hash: peGyZWl3jnDMN4yzGH0I7NWthdVF07VpZ0iqG0M2k_E
+id: paragraph.tint_component.field_tint_text_color
+field_name: field_tint_text_color
+entity_type: paragraph
+bundle: tint_component
+label: 'Text Color'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    color: '#000000'
+    opacity: 1.0
+default_value_callback: ''
+settings:
+  opacity: 1
+field_type: color_field_type

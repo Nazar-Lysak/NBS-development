@@ -1,0 +1,28 @@
+
+.paragraph--type--tint-component {
+    .tint-api_out {
+        .tint_post_item {
+            .slide-image_container {
+                background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+                background-size: 200% 300%;
+                animation: 1.5s shine linear infinite;
+            }
+        }            
+    }
+
+    .tint-api_popup-container {
+        .tint-api_popup-content {
+            .popup_slide-image {
+                background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%) !important;
+                background-size: 200% 300% !important;
+                animation: 1.5s shine linear infinite !important;
+            }
+        }
+    }
+}
+
+@keyframes shine {
+    to {
+      background-position-x: -200%;
+    }
+}

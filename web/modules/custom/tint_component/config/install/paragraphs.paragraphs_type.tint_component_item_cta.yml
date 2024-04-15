@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: tint_component_item_cta
+label: 'TINT Component Item CTA'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,26 @@
+tint_api_component:
+  version: 1.x
+  js:  
+    libraries/hammer/hammer.min.js: {}    
+    libraries/swiper/swiper.min.js: {}  
+    libraries/tile/tile.min.js: {}
+    libraries/tile/imagesLoaded.min.js: {}   
+    assets/dist/js/script.js: {}
+    assets/js/handlePopup.js: {}
+    assets/js/handleStyles.js: {}
+
+  css:
+    theme:
+      libraries/swiper/swiper.min.css: {}
+      assets/dist/css/main.min.css: {}
+  dependencies:
+    - core/jquery
+    - core/once
+
+tint_api_edit_form:
+  version: 1.x
+  js:      
+    assets/form/form.js: {}
+  css:
+    theme:
+      assets/form/form.css: {}

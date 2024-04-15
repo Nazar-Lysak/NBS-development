@@ -1,0 +1,41 @@
+.paragraph--type--tint-component {
+    .tint-api_out {
+        .tint_content_wrapper {
+            position: relative;
+            padding-bottom: 10px;
+
+            .tint_content_wrapper_overlay,
+            .wrapper_overlay__loader {
+                transition: .8s;
+            }
+            .wrapper_overlay_active {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background-color: #000;
+                z-index: 99;
+                opacity: 0.3;
+                border-radius: 6px;                
+            }
+
+            .overlay_active_loader {
+                position: absolute;
+                left: calc(50% - 40px) !important;
+            }
+            .tile-wrapper {   
+                
+                min-height: 440px;
+                
+                .grid__item {
+                    margin-bottom: 30px;
+                    position: absolute;
+                    transition: .3s;
+                    opacity: 0;
+                }    
+            }                          
+        }
+    }
+}
+

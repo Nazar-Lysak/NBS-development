@@ -1,0 +1,162 @@
+
+.tint-api_popup-container {
+    .tint-api_popup-content {
+        .popup-swiper {
+            .swiper-slide {
+                .popup_slide-content {
+                    .popup_slide-bottom {
+                        .slide-bottom_share {
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            background-size: contain;                                
+                            height: 20px;
+                            width: 20px;
+                            cursor: pointer;
+
+                            .slide-bottom_socials {
+                                margin: 0;
+                                padding: 0 !important;
+                                position: absolute;
+                                bottom: 50px;
+                                right: 0;
+                                padding: 10px 12px 10px 10px;
+                                background-color: rgba(255, 255, 255, 0.8);
+                                box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+                                border-radius: 8px;
+                                border: 1px solid #C9C5B9;
+                                transition: .5s;
+                                opacity: 0;
+                                height: 0;
+                                width: 132px;
+
+                                &::after {
+                                    content: "";
+                                    width: 20px;
+                                    height: 20px;
+                                    background-color: #fff;
+                                    border-left: solid 1px #C9C5B9;
+                                    border-bottom: solid 1px #C9C5B9;
+                                    right: 12px;
+                                    bottom: -11px;
+                                    position: absolute;
+                                    -webkit-transform: rotate(45deg);
+                                    transform: rotate(-45deg);
+                                }
+
+                                .socials-link {
+                                    color: #000;
+                                    
+
+                                    .social_item {
+                                        opacity: 0;
+                                        transition: .3;
+                                        position: relative;
+                                        display: block;
+                                        padding: 7px 5px 7px 36px;
+                                        transition: .3s;
+                                        border-radius: 4px;
+                                        display: none;
+
+                                        &::before {
+                                            height: 18px;
+                                            width: 18px;
+                                            position: absolute;
+                                            top: 9px;
+                                            left: 6px;
+                                            content: '';
+                                            background-position: center;
+                                            background-repeat: no-repeat;
+                                            background-size: contain;
+                                        }   
+                                    }                                        
+
+                                    .facebook {
+                                        &::before {                                            
+                                            background-image: url('../../images/socials/facebook.svg');
+                                        }
+                                    }
+
+                                    .linkedin {
+                                        &::before {                                            
+                                            background-image: url('../../images/socials/linkedin.svg');
+                                        }
+                                    }
+
+                                    .twitter {
+                                        &::before {                                            
+                                            background-image: url('../../images/socials/twitter.svg');
+                                        }
+                                    }
+
+                                    .email {
+                                        &::before {                                            
+                                            background-image: url('../../images/socials/email.svg');
+                                        }
+                                    }
+
+                                    .pinterest {
+                                        &::before {                                            
+                                            background-image: url('../../images/socials/pinterest.svg');
+                                        }
+                                    }
+                                }       
+                            }                                
+                        }
+
+                        .active {      
+                            .share-overlay   {
+                                position: fixed;
+                                top: 0;
+                                left: 0;
+                                bottom: 0;
+                                right: 0;
+                                z-index: 99;
+                            }
+
+                            .slide-bottom_socials {
+                                padding: 15px!important;
+                                width: auto;
+                            }
+                            .slide-bottom_socials {
+                                height: 232px;
+                                opacity: 1;
+                                z-index: 100;                                    
+
+                                .socials-link {                      
+
+                                    .social_item {
+                                        display: block;   
+                                        animation: socialItemAnimation .5s ease-in-out forwards;                                        
+                                        animation-delay: .3s;
+                                    }
+                                        
+                                    @keyframes socialItemAnimation {
+                                        0% {
+                                            opacity: 0;
+                                        }
+                                        100% {
+                                            opacity: 1;
+                                        }
+                                    }
+                                }   
+                            }       
+                        }  
+
+                        .hide-share {
+                            display: none;
+                            cursor: auto;
+                            
+                            .share-overlay {
+                                display: none;
+                            }
+
+                            .slide-bottom_socials {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

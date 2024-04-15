@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tint_c_item_url
+    - paragraphs.paragraphs_type.tint_component_item_cta
+id: paragraph.tint_component_item_cta.field_tint_c_item_url
+field_name: field_tint_c_item_url
+entity_type: paragraph
+bundle: tint_component_item_cta
+label: URL
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,231 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.tint_component.field_cta_for_post
+    - field.field.paragraph.tint_component.field_ltint_c_ink_open_method
+    - field.field.paragraph.tint_component.field_overlay_text_color
+    - field.field.paragraph.tint_component.field_tint_c_api_key
+    - field.field.paragraph.tint_component.field_tint_c_description
+    - field.field.paragraph.tint_component.field_tint_c_grid_initial_posts
+    - field.field.paragraph.tint_component.field_tint_c_initial_tile_posts
+    - field.field.paragraph.tint_component.field_tint_c_load_more_posts
+    - field.field.paragraph.tint_component.field_tint_c_max_posts
+    - field.field.paragraph.tint_component.field_tint_c_overlay_bg
+    - field.field.paragraph.tint_component.field_tint_c_share_button
+    - field.field.paragraph.tint_component.field_tint_c_slider_autoscroll
+    - field.field.paragraph.tint_component.field_tint_c_template
+    - field.field.paragraph.tint_component.field_tint_c_title
+    - field.field.paragraph.tint_component.field_tint_comp_theme_color
+    - field.field.paragraph.tint_component.field_tint_g_dektop_posts_in_row
+    - field.field.paragraph.tint_component.field_tint_g_mobile_posts_in_row
+    - field.field.paragraph.tint_component.field_tint_popup_bg_color
+    - field.field.paragraph.tint_component.field_tint_post_index_search
+    - field.field.paragraph.tint_component.field_tint_t_dektop_posts_in_row
+    - field.field.paragraph.tint_component.field_tint_t_load_more_posts
+    - field.field.paragraph.tint_component.field_tint_t_mobile_posts_in_row
+    - field.field.paragraph.tint_component.field_tint_text_color
+    - paragraphs.paragraphs_type.tint_component
+  module:
+    - color_field
+    - entity_reference_revisions
+    - options
+    - text
+_core:
+  default_config_hash: nFMsV4QzFJFbXZ_iJJqKqbuItCjcY8w3f_wTnt5P60s
+id: paragraph.tint_component.default
+targetEntityType: paragraph
+bundle: tint_component
+mode: default
+content:
+  field_cta_for_post:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_ltint_c_ink_open_method:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 28
+    region: content
+  field_overlay_text_color:
+    type: color_field_formatter_text
+    label: above
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    weight: 27
+    region: content
+  field_tint_c_api_key:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_tint_c_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_tint_c_grid_initial_posts:
+    type: number_integer
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 21
+    region: content
+  field_tint_c_initial_tile_posts:
+    type: number_integer
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 19
+    region: content
+  field_tint_c_load_more_posts:
+    type: number_integer
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_tint_c_max_posts:
+    type: number_integer
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_tint_c_overlay_bg:
+    type: color_field_formatter_text
+    label: above
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    weight: 26
+    region: content
+  field_tint_c_share_button:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_tint_c_slider_autoscroll:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_tint_c_template:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_tint_c_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_tint_comp_theme_color:
+    type: color_field_formatter_text
+    label: hidden
+    settings:
+      format: hex
+      opacity: false
+    third_party_settings: {  }
+    weight: 18
+    region: content
+  field_tint_g_dektop_posts_in_row:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_tint_g_mobile_posts_in_row:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_tint_popup_bg_color:
+    type: color_field_formatter_text
+    label: hidden
+    settings:
+      format: hex
+      opacity: false
+    third_party_settings: {  }
+    weight: 16
+    region: content
+  field_tint_post_index_search:
+    type: number_integer
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  field_tint_t_dektop_posts_in_row:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_tint_t_load_more_posts:
+    type: number_integer
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_tint_t_mobile_posts_in_row:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_tint_text_color:
+    type: color_field_formatter_text
+    label: hidden
+    settings:
+      format: hex
+      opacity: false
+    third_party_settings: {  }
+    weight: 17
+    region: content
+hidden: {  }

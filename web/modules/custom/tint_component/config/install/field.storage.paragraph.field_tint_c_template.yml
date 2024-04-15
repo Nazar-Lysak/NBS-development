@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_tint_c_template
+field_name: field_tint_c_template
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: slider
+      label: Slider
+    -
+      value: grid
+      label: Grid
+    -
+      value: tile
+      label: Tile
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

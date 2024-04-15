@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tint_c_template
+    - paragraphs.paragraphs_type.tint_component
+  module:
+    - options
+id: paragraph.tint_component.field_tint_c_template
+field_name: field_tint_c_template
+entity_type: paragraph
+bundle: tint_component
+label: Template
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: slider
+default_value_callback: ''
+settings: {  }
+field_type: list_string

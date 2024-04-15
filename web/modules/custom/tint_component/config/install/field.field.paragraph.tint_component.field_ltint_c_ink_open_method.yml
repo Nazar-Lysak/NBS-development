@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ltint_c_ink_open_method
+    - paragraphs.paragraphs_type.tint_component
+  module:
+    - options
+id: paragraph.tint_component.field_ltint_c_ink_open_method
+field_name: field_ltint_c_ink_open_method
+entity_type: paragraph
+bundle: tint_component
+label: 'Link open method'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: same_tab
+default_value_callback: ''
+settings: {  }
+field_type: list_string

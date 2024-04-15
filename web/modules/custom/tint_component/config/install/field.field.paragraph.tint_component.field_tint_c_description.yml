@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tint_c_description
+    - paragraphs.paragraphs_type.tint_component
+  module:
+    - text
+id: paragraph.tint_component.field_tint_c_description
+field_name: field_tint_c_description
+entity_type: paragraph
+bundle: tint_component
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

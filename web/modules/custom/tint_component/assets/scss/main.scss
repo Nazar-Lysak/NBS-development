@@ -1,0 +1,46 @@
+@import './additional/fonts.scss';
+@import './additional/loader.scss';
+@import './grid/grid.scss';
+@import './additional/main-post-teaser.scss';
+@import './swiper/swiper.scss';
+@import './popup_swiper/popup-swiper.scss';
+@import './tile/tile.scss';
+@import './additional/share-socials.scss';
+@import './additional/skeleton.scss';
+@import './additional/scrollbars.scss';
+
+.paragraph--type--tint-component {
+
+    margin: 50px auto;
+    padding: 0 15px !important;
+    max-width: 100%;
+
+    * {
+        font-family: inherit;
+        box-sizing: border-box;
+        user-select: none;
+
+        button {
+            cursor: pointer;
+        }
+    }
+
+    .field--name-field-tint-c-description {
+        margin-bottom: 40px;
+    }
+
+    .tint_c_loadmore {
+        display: block;
+        border-radius: 4px;
+        padding: 4px 16px;
+        margin-right: 10px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 20px;
+        text-align: center;
+        color: black;
+        transition: .3s;
+        margin-top: 40px;
+        margin: auto;
+    }     
+}

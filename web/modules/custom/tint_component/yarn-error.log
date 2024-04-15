@@ -1,0 +1,53 @@
+Arguments: 
+  /usr/bin/node /usr/bin/yarn install
+
+PATH: 
+  ~/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/var/www/html/vendor/bin:/var/www/html/bin:/var/www/html/vendor/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.19.1
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: self signed certificate in certificate chain
+      at TLSSocket.onConnectSecure (node:_tls_wrap:1539:34)
+      at TLSSocket.emit (node:events:513:28)
+      at TLSSocket._finishInit (node:_tls_wrap:953:8)
+      at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:734:12)
+
+npm manifest: 
+  {
+    "name": "tint_component",
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "NBS Lviv",
+    "license": "MIT",
+    "scripts": {
+      "build": "gulp build",
+      "watch": "gulp watch"
+    },
+    "dependencies": {
+      "gulp": "^4.0.2",
+      "gulp-autoprefixer": "^8.0.0",
+      "gulp-clean-css": "^4.3.0",
+      "gulp-dart-sass": "^1.0.2",
+      "gulp-group-css-media-queries": "^1.2.2",
+      "gulp-rename": "^2.0.0",
+      "gulp-sourcemaps": "^3.0.0",
+      "gulp-uglify": "^3.0.2"
+    },
+    "devDependencies": {
+      "gulp-concat": "^2.6.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

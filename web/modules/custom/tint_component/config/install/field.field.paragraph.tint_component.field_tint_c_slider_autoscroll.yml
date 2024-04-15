@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tint_c_slider_autoscroll
+    - paragraphs.paragraphs_type.tint_component
+id: paragraph.tint_component.field_tint_c_slider_autoscroll
+field_name: field_tint_c_slider_autoscroll
+entity_type: paragraph
+bundle: tint_component
+label: 'Slider autoscroll'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

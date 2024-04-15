@@ -1,0 +1,222 @@
+<?php
+
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\paragraphs\Entity\Paragraph;
+
+/**
+ * Implements hook_theme().
+ */
+function tint_component_theme($existing, $type, $theme, $path) {
+  return [
+    'paragraph__tint_component' => [
+      'base hook' => 'paragraph',
+    ],
+  ];
+}
+
+function tint_component_uninstall() {
+  $config_names = [
+    'field.storage.paragraph.field_tint_t_mobile_posts_in_row',
+    'field.storage.paragraph.field_tint_t_load_more_posts',
+    'field.storage.paragraph.field_tint_t_dektop_posts_in_row',
+    'field.storage.paragraph.field_tint_post_index_search',
+    'field.storage.paragraph.field_tint_g_mobile_posts_in_row',
+    'field.storage.paragraph.field_tint_g_dektop_posts_in_row',
+    'field.storage.paragraph.field_tint_c_title',
+    'field.storage.paragraph.field_tint_c_template',
+    'field.storage.paragraph.field_tint_c_slider_autoscroll',
+    'field.storage.paragraph.field_tint_c_share_button',
+    'field.storage.paragraph.field_tint_c_max_posts',
+    'field.storage.paragraph.field_tint_c_load_more_posts',
+    'field.storage.paragraph.field_tint_c_item_url',
+    'field.storage.paragraph.field_tint_c_item_link_text',
+    'field.storage.paragraph.field_tint_c_api_key',
+    'field.storage.paragraph.field_index_of_post',
+    'field.storage.paragraph.field_cta_for_post',
+    'paragraphs.paragraphs_type.tint_component',
+    'field.field.paragraph.tint_component.field_tint_t_mobile_posts_in_row',
+    'field.field.paragraph.tint_component.field_tint_t_load_more_posts',
+    'field.field.paragraph.tint_component.field_tint_t_dektop_posts_in_row',
+    'field.field.paragraph.tint_component.field_tint_post_index_search',
+    'field.field.paragraph.tint_component.field_tint_g_mobile_posts_in_row',
+    'field.field.paragraph.tint_component.field_tint_g_dektop_posts_in_row',
+    'field.field.paragraph.tint_component.field_tint_c_title',
+    'field.field.paragraph.tint_component.field_tint_c_template',
+    'field.field.paragraph.tint_component.field_tint_c_slider_autoscroll',
+    'field.field.paragraph.tint_component.field_tint_c_share_button',
+    'field.field.paragraph.tint_component.field_tint_c_max_posts',
+    'field.field.paragraph.tint_component.field_tint_c_load_more_posts',
+    'field.field.paragraph.tint_component.field_tint_c_api_key',
+    'paragraphs.paragraphs_type.tint_component_item_cta',
+    'field.field.paragraph.tint_component_item_cta.field_tint_c_item_url',
+    'field.field.paragraph.tint_component_item_cta.field_tint_c_item_link_text',
+    'field.field.paragraph.tint_component_item_cta.field_index_of_post',
+    'field.field.paragraph.tint_component.field_cta_for_post',
+    'core.entity_view_display.paragraph.tint_component_item_cta.default',
+    'core.entity_form_display.paragraph.tint_component_item_cta.default',
+    'field.storage.paragraph.field_tint_c_description',
+    'field.field.paragraph.tint_component.field_tint_c_description',
+    'core.entity_view_display.paragraph.tint_component.default',
+    'core.entity_form_display.paragraph.tint_component.default',
+    // 'field.field.paragraph.tint_component.field_tint_c_hover_color',
+    'field.field.paragraph.tint_component.field_tint_comp_theme_color',
+    'field.field.paragraph.tint_component.field_tint_popup_bg_color',
+    'field.field.paragraph.tint_component.field_tint_text_color',
+    // 'field.storage.paragraph.field_tint_c_hover_color',
+    'field.storage.paragraph.field_tint_comp_theme_color',
+    'field.storage.paragraph.field_tint_popup_bg_color',
+    'field.storage.paragraph.field_tint_text_color',
+    'field.storage.paragraph.field_tint_c_initial_tile_posts',
+    // 'field.storage.paragraph.field_tint_c_initial_grid_posts',
+    'field.field.paragraph.tint_component.field_tint_c_initial_tile_posts',
+    // 'field.field.paragraph.tint_component.field_tint_c_initial_grid_posts',
+    // 'field.storage.paragraph.field_tint_c_tile_initial_posts',
+    // 'field.storage.paragraph.field_tint_c_show_more_button',
+    // 'field.storage.paragraph.field_tint_c_show_less_button',
+    // 'field.storage.paragraph.field_tint_c_products_items',
+    'field.storage.paragraph.field_tint_c_grid_initial_posts',
+    // 'field.field.paragraph.tint_component.field_tint_c_tile_initial_posts',
+    // 'field.field.paragraph.tint_component.field_tint_c_show_more_button',
+    // 'field.field.paragraph.tint_component.field_tint_c_show_less_button',
+    // 'field.field.paragraph.tint_component.field_tint_c_products_items',
+    'field.field.paragraph.tint_component.field_tint_c_grid_initial_posts',
+    'field.storage.paragraph.field_tint_c_overlay_bg',
+    'field.storage.paragraph.field_overlay_text_color',
+    'field.storage.paragraph.field_ltint_c_ink_open_method',
+    'field.field.paragraph.tint_component.field_tint_c_overlay_bg',
+    'field.field.paragraph.tint_component.field_overlay_text_color',
+    'field.field.paragraph.tint_component.field_ltint_c_ink_open_method'
+
+
+
+  ];
+
+  foreach ($config_names as $config_name) {
+    \Drupal::configFactory()->getEditable($config_name)->delete();
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * @param [type] $variables
+ *
+ * @return void
+ */
+function tint_component_preprocess_page(&$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+
+
+  if (\Drupal::routeMatch()->getRouteName() == 'entity.node.edit_form') {
+    $variables['#attached']['library'][] = 'tint_component/tint_api_edit_form';
+  }
+
+
+  if ($node instanceof \Drupal\node\NodeInterface) {
+    $node = $variables['node'];
+  }
+  if ($node) {
+    foreach ($node->getFieldDefinitions() as $field) {
+      $handlerSettings = $field->getSetting('handler_settings');
+      if (isset($handlerSettings['target_bundles']['tint_component'])) {
+        $fieldName = $field->getName();
+        setTintParams1($node, $variables, $fieldName, \Drupal::entityTypeManager());
+      }
+    }
+  }
+}
+
+function setTintParams1($node, &$variables, $fieldName, EntityTypeManagerInterface $entityTypeManager) {
+  $paragraphStorage = $entityTypeManager->getStorage('paragraph');
+  $paragraphsTintId = $paragraphStorage->getQuery()
+    ->condition('type', 'tint_component')
+    ->accessCheck(FALSE)
+    ->execute();
+
+  $nodeParagraphs = $node->get($fieldName)->getValue();
+  $tintId = 0;
+
+  foreach ($nodeParagraphs as $item) {
+    if (in_array($item['target_id'], $paragraphsTintId)) {
+      $tintId = $item['target_id'];
+      break;
+    }
+  }
+
+  if (!$tintId) {
+    return;
+  }
+
+  $tintParagraph = Paragraph::load($tintId);
+  $ctaPostsIds = $tintParagraph->get('field_cta_for_post')->getValue();
+  $ctaPostTargetIds = [];
+  $ctaPosts = null;
+  $ctaPostValue = [];
+  foreach ($ctaPostsIds as $key => $value) {
+    $ctaPostTargetIds[] =  $value['target_id'];
+  }
+  if(count($ctaPostTargetIds) >= 1) {
+    $ctaPosts = $paragraphStorage->loadMultiple($ctaPostTargetIds);
+  }
+  foreach ($ctaPosts as $key => $value) {
+    $array = [
+      'index' =>  $value->get('field_index_of_post')->value,
+      'link_text' =>  $value->get('field_tint_c_item_link_text')->value,
+      'item_url' =>  $value->get('field_tint_c_item_url')->value,
+    ];
+    $ctaPostValue[] = $array; 
+  }
+  // $hoverColor = $tintParagraph->get('field_tint_c_hover_color')?->getValue()[0];
+  $themeColor = $tintParagraph->get('field_tint_comp_theme_color')
+    ?->getValue()[0];
+  $textColor = $tintParagraph->get('field_tint_text_color')?->getValue()[0];
+  $popupColor = $tintParagraph->get('field_tint_popup_bg_color')?->getValue()[0];
+  $overlay_bg = $tintParagraph->get('field_tint_c_overlay_bg')?->getValue()[0];
+  $overlay_text_color = $tintParagraph->get('field_overlay_text_color')?->getValue()[0];
+  $apiData = [
+    'api_key' => $tintParagraph->get('field_tint_c_api_key')->value,
+    'hover_color' => [
+      'color' => $hoverColor['color'],
+      'opacity' => $hoverColor['opacity'],
+    ],
+    'theme_color' => [
+      'color' => $themeColor['color'],
+      'opacity' => $themeColor['opacity'],
+    ],
+    'overlay_bg' => [
+      'color' => $overlay_bg['color'],
+      'opacity' => $overlay_bg['opacity'],
+    ],
+    'overlay_text_color' => [
+      'color' => $overlay_text_color['color'],
+      'opacity' => $overlay_text_color['opacity'],
+    ],
+    'text_color' => [
+      'color' => $textColor['color'],
+      'opacity' => $textColor['opacity'],
+    ],
+    'popup_color' => [
+      'color' => $popupColor['color'],
+      'opacity' => $popupColor['opacity'],
+    ],
+    'target_blank' => $tintParagraph->get('field_ltint_c_ink_open_method')?->value,
+    'max_posts' => $tintParagraph->get('field_tint_c_max_posts')?->value,
+    'more_posts' => $tintParagraph->get('field_tint_c_load_more_posts')?->value,
+    'share_button' => $tintParagraph->get('field_tint_c_share_button')?->value,
+    'template' => $tintParagraph->get('field_tint_c_template')?->value,
+    'slider_autoscroll' => $tintParagraph->get('field_tint_c_slider_autoscroll')?->value,
+    'initial_posts_g' => $tintParagraph->get('field_tint_c_grid_initial_posts')?->value,
+    'desktop_posts_g' => $tintParagraph->get('field_tint_g_dektop_posts_in_row')?->value,
+    'mobile_posts_g' => $tintParagraph->get('field_tint_g_mobile_posts_in_row')?->value,
+    'initial_posts_t' => $tintParagraph->get('field_tint_c_initial_tile_posts')?->value,
+    'desktop_posts_t' => $tintParagraph->get('field_tint_t_dektop_posts_in_row')?->value,
+    'mobile_posts_t' => $tintParagraph->get('field_tint_t_mobile_posts_in_row')?->value,
+    'more_posts_t' => $tintParagraph->get('field_tint_t_load_more_posts')?->value,
+    'post_index_search' => $tintParagraph->get('field_tint_post_index_search')?->value,
+    'cta_posts' => $ctaPostValue,
+  ];
+
+  $variables['#attached']['drupalSettings']['tintComponent'] = $apiData;
+}
+
+

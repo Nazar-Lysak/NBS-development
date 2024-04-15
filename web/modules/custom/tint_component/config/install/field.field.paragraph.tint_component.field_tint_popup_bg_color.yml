@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tint_popup_bg_color
+    - paragraphs.paragraphs_type.tint_component
+  module:
+    - color_field
+_core:
+  default_config_hash: Xr3uZEm5x2V6V66wnmRq5M-4fTOCpD_9z9HsOmOJqh4
+id: paragraph.tint_component.field_tint_popup_bg_color
+field_name: field_tint_popup_bg_color
+entity_type: paragraph
+bundle: tint_component
+label: 'Popup Text Color'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    color: '#000000'
+    opacity: 1.0
+default_value_callback: ''
+settings:
+  opacity: 1
+field_type: color_field_type

@@ -1,0 +1,49 @@
+.paragraph--type--tint-component {
+    .tint-api_out {
+        .loader-wrapper {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 424px;
+    
+            .loader {
+                border: 8px solid #f0f0f0;
+                border-top: 8px solid #dbdbdb;
+                border-radius: 50%;
+                width: 80px;
+                height: 80px;
+                animation: spin 2s linear infinite;
+                margin: auto;
+                transform: translateY(-50%);
+            }
+    
+            @keyframes spin {
+                0% {
+                    transform: rotate(0deg);
+                }
+    
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+        }
+        
+        .tint_content_wrapper
+        .overlay_active_loader {
+            border: 8px solid #f0f0f0;
+            border-top: 8px solid #dbdbdb;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            animation: spin 2s linear infinite;
+            margin: auto;
+            top: 44%;
+            left: 50%;
+            z-index: 100;
+        }
+    }
+}
+
+
